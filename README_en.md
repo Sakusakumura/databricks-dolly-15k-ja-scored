@@ -67,7 +67,7 @@ Therefore, I back-translated these data from Japanese to English and examined th
 Below is a histogram of f1 score, the harmonic mean of precision and recall.
 
 <div align="center">
-  <img src="images/f1-score-full.png" alt="属性" title="タイトル">
+  <img src="https://media.githubusercontent.com/media/Sakusakumura/databricks-dolly-15k-ja-scored/e46aec8f9d2602e9e7c074674390263462534a9a/images/f1-score-full.png">
 </div> 
 
 You can filter out low-quality data by filtering with f1 score.
@@ -111,6 +111,10 @@ There are two fields, "en_ja" and "ja_en", which represent the services used to 
 |--|--|
 |en_ja|Service used to translate from English to Japanese|
 |ja_en|Service used to translate from Japanese to English|
+
+# Acknowledgments
+
+This dataset, `databricks-dolly-15k-ja-scored`, builds upon the work done by kun1em0n, who created the `databricks-dolly-15k-ja` dataset. I want to express my deep appreciation for his valuable work and contribution to the community.
 
 # License/Credits
 

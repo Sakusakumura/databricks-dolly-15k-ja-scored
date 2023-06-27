@@ -51,7 +51,7 @@ For the English version, please click [here](README_en.md).
 # 翻訳の品質スコア
 
 `databricks-dolly-15k-ja`は、`databricks-dolly-15k`を機械翻訳したものです。  
-`databricks-dolly-15k-ja`に含まれるデータを調べてみると、以下のような品質の悪いデータがあることが分かりました。  
+`databricks-dolly-15k-ja`に含まれるデータを調べてみると、以下のような品質の悪いデータが存在することが分かりました。  
 
 1. `input`と`output`が全く同じであるデータ
 2. `output`が`instruction`にコピーされているデータ
@@ -65,11 +65,12 @@ For the English version, please click [here](README_en.md).
 
 そこで、これらのデータを日本語から英語に逆翻訳し、[BertScore](https://arxiv.org/abs/1904.09675)によって原文との類似度を調べました。  
 以下がprecisionとrecallの調和平均であるf1 scoreのヒストグラムです。
+
 <div align="center">
-  <img src="images/f1-score-full.png" alt="属性" title="タイトル">
+  <img src="https://media.githubusercontent.com/media/Sakusakumura/databricks-dolly-15k-ja-scored/e46aec8f9d2602e9e7c074674390263462534a9a/images/f1-score-full.png">
 </div>   
 
-f1 scoreでフィルタリングをすることで、低品質のデータを除外することができます。  
+これらのスコアでフィルタリングをすることで、低品質のデータを除外することができます。  
 いくつか例を示します。  
 
 <details>
@@ -194,11 +195,11 @@ source:
 ## 1. index
 
 データの一意の識別子。  
-元々は`databricks-dolly-15k`のどの行を翻訳したものかを示すフィールドですが、`databricks-dolly-15k`の要素削除の変更を反映していないため、機能していません。
+元々は`databricks-dolly-15k`のどの行を翻訳したものかを示すフィールドでしたが、`databricks-dolly-15k`で削除された要素を反映していないため、実際の行数とは異なっています。
 
 | フィールド名 | 説明 |
-|---------|-------|
-| index   | データの一意の識別子 |
+|---|---|
+| index | データの一意の識別子 |
 
 ## 2. bertscore
 
@@ -206,10 +207,10 @@ BERTモデルによる評価スコア。
 recall、precision、f1の3つの指標を持ちます。
 
 | フィールド名 | 説明 |
-|---------|-------|
-| recall  | 再現率（正解テキストに含まれる情報が、生成されたテキストにどれだけ反映されているかを示す指標） |
+|---|---|
+| recall | 再現率（正解テキストに含まれる情報が、生成されたテキストにどれだけ反映されているかを示す指標） |
 | precision | 適合率（生成されたテキストの各部分が、正解テキストとどれだけ一致しているかを示す指標） |
-| f1      | F1スコア（精度と再現率の調和平均。） |
+| f1 | F1スコア（精度と再現率の調和平均。） |
 
 ## 3. translator
 
@@ -217,9 +218,14 @@ recall、precision、f1の3つの指標を持ちます。
 "en_ja" と "ja_en" の2つのフィールドがあり、それぞれ英語から日本語へ、日本語から英語への翻訳に使用されたサービスを表しています。
 
 | フィールド名 | 説明 |
-|---------|-------|
-| en_ja   | 英語から日本語への翻訳に使用されたサービス |
-| ja_en   | 日本語から英語への翻訳に使用されたサービス |
+|---|---|
+| en_ja | 英語から日本語への翻訳に使用されたサービス |
+| ja_en | 日本語から英語への翻訳に使用されたサービス |
+
+# 謝辞
+
+このデータセット`databricks-dolly-15k-ja-scored`は、クニえもんさんが作成した`databricks-dolly-15k-ja`データセットを基にしています。  
+クニえもんさんの貴重な作業とコミュニティへの貢献に深く感謝申し上げます。
 
 # License/Credits
 
