@@ -3,38 +3,6 @@ license: cc-by-sa-3.0
 task_categories:
 - question-answering
 - summarization
-dataset_info:
-  features:
-  - name: index
-    dtype: int64
-  - name: bertscore
-    struct:
-    - name: recall
-      dtype: float64
-    - name: precision
-      dtype: float64
-    - name: f1
-      dtype: float64
-  - name: category
-    dtype: string
-  - name: instruction
-    dtype: string
-  - name: input
-    dtype: string
-  - name: output
-    dtype: string
-  - name: translator
-    struct:
-    - name: en_ja
-      dtype: string
-    - name: ja_en
-      dtype: string
-  splits:
-  - name: train
-    num_bytes: 16176886
-    num_examples: 15015
-  download_size: 9381044
-  dataset_size: 16176886
 language:
 - ja
 size_categories:
